@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Stock Market Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { text-align: left; padding: 8px; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Indian Stock Market Analysis Results</h1>
+    
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    
+    <h2>Visualization</h2>
+    <img src="data:image/png;base64,{{ plot_url }}">
+</body>
+</html>
